@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - SolonTec</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">SolonTec</a></h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="html.html">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="javascript.html" class="active">JavaScript</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Alternar tema claro/escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header js-header">
+        <div class="container">
+            <h1><i class="fab fa-js"></i> JavaScript</h1>
+            <p id="color_text">A linguagem de programação da web</p>
+        </div>
+    </div>
+
+    <main class="content-page">
+        <div class="container">
+            <div class="sidebar">
+                <nav class="content-nav">
+                    <h3>Conteúdo</h3>
+                    <ul>
+                        <li><a href="#basico">Básico</a></li>
+                        <li><a href="#intermediario">Intermediário</a></li>
+                        <li><a href="#avancado">Avançado</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="main-content">
+                <section id="basico" class="level-section">
+                    <h2>JavaScript Básico</h2>
+                    
+                    <article class="topic">
+                        <h3>O que é JavaScript?</h3>
+                        <p>JavaScript é uma linguagem de programação que permite adicionar interatividade a páginas web. É uma das três tecnologias principais da web, junto com HTML e CSS.</p>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Como incluir JavaScript</h3>
+                        <p>Existem três formas principais de adicionar JavaScript a uma página HTML:</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!-- 1. JavaScript inline --&gt;
+&lt;button onclick="alert('Olá, mundo!')"&gt;Clique em mim&lt;/button&gt;
+
+&lt;!-- 2. JavaScript interno (script tag) --&gt;
+&lt;script&gt;
+    function saudar() {
+        alert('Olá, mundo!');
+    }
+&lt;/script&gt;
+
+&lt;!-- 3. JavaScript externo (arquivo separado) --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Variáveis e tipos de dados</h3>
+                        <p>JavaScript possui vários tipos de dados e três formas de declarar variáveis:</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Declaração de variáveis
+let nome = "Maria";           // let: pode ser reatribuído
+const idade = 25;             // const: não pode ser reatribuído
+var linguagem = "JavaScript"; // var: forma antiga (evitar usar)
+
+// Tipos de dados primitivos
+let texto = "Isso é uma string";          // String
+let numero = 42;                          // Number
+let decimal = 3.14;                       // Number (decimais)
+let verdadeiro = true;                    // Boolean
+let falso = false;                        // Boolean
+let nulo = null;                          // Null
+let indefinido = undefined;               // Undefined
+let simbolo = Symbol("descrição");        // Symbol
+let bigInt = 1234567890123456789012345n;  // BigInt
+
+// Tipos de dados não-primitivos (objetos)
+let array = [1, 2, 3, 4];                 // Array
+let objeto = { nome: "João", idade: 30 }; // Objeto
+let data = new Date();                    // Data
+let regex = /abc/;                        // Expressão regular</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Operadores</h3>
+                        <p>JavaScript oferece diversos operadores para manipular valores:</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Operadores aritméticos
+let soma = 10 + 5;         // 15
+let subtracao = 10 - 5;    // 5
+let multiplicacao = 10 * 5; // 50
+let divisao = 10 / 5;      // 2
+let resto = 10 % 3;        // 1
+let exponenciacao = 10 ** 2; // 100
+let incremento = 5;
+incremento++;              // 6
+let decremento = 5;
+decremento--;              // 4
+
+// Operadores de atribuição
+let x = 10;
+x += 5;                    // x = x + 5 (15)
+x -= 3;                    // x = x - 3 (12)
+x *= 2;                    // x = x * 2 (24)
+x /= 4;                    // x = x / 4 (6)
+
+// Operadores de comparação
+let igual = 5 == "5";      // true (compara valor)
+let estritamenteIgual = 5 === "5"; // false (compara valor e tipo)
+let diferente = 5 != "5";  // false
+let estritamenteDiferente = 5 !== "5"; // true
+let maior = 10 > 5;        // true
+let menor = 10 < 20;       // true
+let maiorOuIgual = 10 >= 10; // true
+let menorOuIgual = 5 <= 10;  // true
+
+// Operadores lógicos
+let e = (5 > 3) && (10 > 5); // true (ambos verdadeiros)
+let ou = (5 > 10) || (10 > 5); // true (pelo menos um verdadeiro)
+let nao = !(5 > 10);          // true (inverte o boolean)</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Estruturas de controle</h3>
+                        <p>JavaScript usa estruturas condicionais e de repetição para controlar o fluxo do código:</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Condicionais
+// if-else
+let idade = 18;
+
+if (idade >= 18) {
+    console.log("Maior de idade");
+} else {
+    console.log("Menor de idade");
+}
+
+// if-else if-else
+let nota = 85;
+
+if (nota >= 90) {
+    console.log("A");
+} else if (nota >= 80) {
+    console.log("B");
+} else if (nota >= 70) {
+    console.log("C");
+} else {
+    console.log("D");
+}
+
+// switch
+let dia = 3;
+let nomeDia;
+
+switch (dia) {
+    case 1:
+        nomeDia = "Domingo";
+        break;
+    case 2:
+        nomeDia = "Segunda";
+        break;
+    case 3:
+        nomeDia = "Terça";
+        break;
+    // ...outros casos
+    default:
+        nomeDia = "Dia inválido";
+}
+
+// Operador ternário
+let status = idade >= 18 ? "Adulto" : "Menor";
+
+// Loops
+// for
+for (let i = 0; i < 5; i++) {
+    console.log(`Iteração ${i}`);
+}
+
+// while
+let contador = 0;
+while (contador < 5) {
+    console.log(`Contador: ${contador}`);
+    contador++;
+}
+
+// do-while (executa pelo menos uma vez)
+let j = 0;
+do {
+    console.log(`j é ${j}`);
+    j++;
+} while (j < 3);
+
+// for...of (para arrays)
+const frutas = ["maçã", "banana", "laranja"];
+for (const fruta of frutas) {
+    console.log(fruta);
+}
+
+// for...in (para objetos)
+const pessoa = { nome: "João", idade: 30, profissao: "Desenvolvedor" };
+for (const propriedade in pessoa) {
+    console.log(`${propriedade}: ${pessoa[propriedade]}`);
+}</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="intermediario" class="level-section">
+                    <h2>JavaScript Intermediário</h2>
+                    
+                    <article class="topic">
+                        <h3>Funções</h3>
+                        <p>Funções são blocos de código reutilizáveis que executam tarefas específicas.</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Declaração de função
+function somar(a, b) {
+    return a + b;
+}
+
+// Expressão de função
+const multiplicar = function(a, b) {
+    return a * b;
+};
+
+// Arrow functions
+const dividir = (a, b) => a / b;
+
+// Função com parâmetros padrão
+function saudar(nome = "visitante") {
+    return `Olá, ${nome}!`;
+}
+
+// Rest parameters
+function somarTodos(...numeros) {
+    return numeros.reduce((total, num) => total + num, 0);
+}
+console.log(somarTodos(1, 2, 3, 4, 5)); // 15
+
+// Funções de callback
+function processar(numero, callback) {
+    return callback(numero);
+}
+
+const dobrar = (n) => n * 2;
+console.log(processar(5, dobrar)); // 10
+
+// Closures
+function contador() {
+    let count = 0;
+    
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const incrementar = contador();
+console.log(incrementar()); // 1
+console.log(incrementar()); // 2</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Arrays e métodos de array</h3>
+                        <p>JavaScript oferece diversos métodos para manipular arrays de forma eficiente.</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Criando arrays
+const numeros = [1, 2, 3, 4, 5];
+const frutas = ["maçã", "banana", "laranja"];
+const misto = [1, "texto", true, null, [1, 2]];
+
+// Acessando elementos
+console.log(numeros[0]); // 1
+console.log(frutas[1]); // "banana"
+
+// Métodos de arrays
+// Adicionar/remover elementos
+frutas.push("morango");       // Adiciona ao final
+frutas.pop();                 // Remove do final
+frutas.unshift("abacaxi");    // Adiciona ao início
+frutas.shift();               // Remove do início
+frutas.splice(1, 2, "kiwi");  // Remove 2 itens a partir do índice 1 e adiciona "kiwi"
+
+// Encontrar elementos
+const encontrarBanana = frutas.indexOf("banana"); // Retorna o índice ou -1
+const temLaranja = frutas.includes("laranja");    // Retorna true ou false
+const primeiroMaiorQue3 = numeros.find(n => n > 3); // Retorna o primeiro elemento que satisfaz
+const indiceMaiorQue3 = numeros.findIndex(n => n > 3); // Retorna o índice
+
+// Transformar arrays
+const dobrados = numeros.map(n => n * 2);           // [2, 4, 6, 8, 10]
+const maioresQue3 = numeros.filter(n => n > 3);     // [4, 5]
+const soma = numeros.reduce((total, n) => total + n, 0); // 15
+numeros.forEach(n => console.log(n));               // Executa para cada item
+const ordenados = [...numeros].sort((a, b) => b - a); // Ordena decrescente
+
+// Outros métodos úteis
+const stringDeNumeros = numeros.join(", ");         // "1, 2, 3, 4, 5"
+const copia = numeros.slice(1, 3);                  // [2, 3] (do índice 1 até o 2)
+const concatenado = numeros.concat(frutas);         // Junta arrays
+
+// Desestruturação de arrays
+const [primeiro, segundo, ...resto] = numeros;      // primeiro=1, segundo=2, resto=[3,4,5]</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Objetos e métodos de objeto</h3>
+                        <p>Objetos são estruturas que agrupam valores por chaves e são fundamentais em JavaScript.</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Criando objetos
+const pessoa = {
+    nome: "Maria",
+    idade: 30,
+    profissao: "Desenvolvedora",
+    hobbies: ["leitura", "música", "programação"],
+    endereco: {
+        rua: "Rua das Flores",
+        numero: 123,
+        cidade: "São Paulo"
+    },
+    saudar: function() {
+        return `Olá, meu nome é ${this.nome}!`;
+    }
+};
+
+// Acessando propriedades
+console.log(pessoa.nome);              // "Maria"
+console.log(pessoa["idade"]);          // 30
+console.log(pessoa.endereco.cidade);   // "São Paulo"
+console.log(pessoa.saudar());          // "Olá, meu nome é Maria!"
+
+// Adicionando e modificando propriedades
+pessoa.email = "maria@exemplo.com";    // Adiciona nova propriedade
+pessoa.idade = 31;                     // Modifica propriedade existente
+delete pessoa.hobbies;                 // Remove uma propriedade
+
+// Métodos de objetos
+const chaves = Object.keys(pessoa);    // Array de chaves
+const valores = Object.values(pessoa); // Array de valores
+const entradas = Object.entries(pessoa); // Array de [chave, valor]
+const outraPessoa = Object.assign({}, pessoa, { idade: 25 }); // Clone com modificação
+
+// Desestruturação de objetos
+const { nome, idade, endereco: { cidade } } = pessoa;
+console.log(nome, idade, cidade);      // "Maria", 31, "São Paulo"
+
+// Spread operator com objetos
+const pessoaAtualizada = { ...pessoa, cargo: "Tech Lead", idade: 32 };
+
+// Métodos abreviados e propriedades computadas
+const chave = "cargo";
+const funcionario = {
+    nome: "João",
+    idade: 28,
+    [chave]: "Desenvolvedor", // Propriedade computada
+    // Método abreviado
+    saudar() {
+        return `Olá, sou ${this.nome}!`;
+    }
+};</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="avancado" class="level-section">
+                    <h2>JavaScript Avançado</h2>
+                    
+                    <article class="topic">
+                        <h3>Promises e Async/Await</h3>
+                        <p>JavaScript oferece Promises e Async/Await para lidar com operações assíncronas de forma mais elegante.</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Promises
+function buscarDados(id) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (id > 0) {
+                const dados = { id, nome: `Usuário ${id}` };
+                resolve(dados);
+            } else {
+                reject(new Error('ID inválido'));
+            }
+        }, 1000);
+    });
+}
+
+// Usando Promises
+buscarDados(123)
+    .then(dados => {
+        console.log('Dados obtidos:', dados);
+        return buscarDados(456);
+    })
+    .then(dadosAdicionais => {
+        console.log('Dados adicionais:', dadosAdicionais);
+    })
+    .catch(erro => {
+        console.error('Erro:', erro.message);
+    })
+    .finally(() => {
+        console.log('Operação finalizada!');
+    });
+
+// Promise combinators
+const promise1 = buscarDados(1);
+const promise2 = buscarDados(2);
+const promise3 = buscarDados(3);
+
+// Promise.all - espera todas as promises serem resolvidas
+Promise.all([promise1, promise2, promise3])
+    .then(resultados => {
+        console.log('Todos os dados:', resultados);
+    })
+    .catch(erro => {
+        console.error('Erro em alguma promise:', erro);
+    });
+
+// Promise.race - retorna a primeira promise a ser resolvida ou rejeitada
+Promise.race([promise1, promise2, promise3])
+    .then(primeiroResultado => {
+        console.log('Primeiro resultado:', primeiroResultado);
+    });
+
+// Promise.allSettled - retorna o resultado de todas as promises, resolvidas ou rejeitadas
+Promise.allSettled([promise1, promise2, promise3])
+    .then(resultados => {
+        console.log('Todos os resultados:', resultados);
+    });
+
+// Async/Await
+async function buscarUsuarios() {
+    try {
+        // Aguarda a promise ser resolvida
+        const usuario1 = await buscarDados(1);
+        console.log('Usuário 1:', usuario1);
+        
+        // Operações sequenciais
+        const usuario2 = await buscarDados(2);
+        console.log('Usuário 2:', usuario2);
+        
+        return [usuario1, usuario2];
+    } catch (erro) {
+        console.error('Erro ao buscar usuários:', erro);
+        throw erro; // Re-throw para tratamento externo
+    } finally {
+        console.log('Busca finalizada');
+    }
+}
+
+// Chamando função async
+buscarUsuarios()
+    .then(usuarios => {
+        console.log('Usuários recuperados:', usuarios);
+    })
+    .catch(erro => {
+        console.error('Falha na operação:', erro);
+    });</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Classes e Programação Orientada a Objetos</h3>
+                        <p>JavaScript ES6+ introduziu a sintaxe de classes para facilitar a programação orientada a objetos.</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Declaração de classe
+class Usuario {
+    // Propriedades privadas (ES2022+)
+    #senha;
+    
+    // Construtor
+    constructor(nome, email, senha) {
+        this.nome = nome;
+        this.email = email;
+        this.#senha = senha;
+        this.ativo = true;
+        this.dataCriacao = new Date();
+    }
+    
+    // Getter e setter
+    get nomeCompleto() {
+        return `${this.nome} (${this.email})`;
+    }
+    
+    set nomeCompleto(valor) {
+        const partes = valor.split(' ');
+        this.nome = partes[0];
+    }
+    
+    // Métodos
+    verificarSenha(senha) {
+        return this.#senha === senha;
+    }
+    
+    // Método estático (da classe, não da instância)
+    static validarEmail(email) {
+        return email.includes('@');
+    }
+}
+
+// Herança de classes
+class Admin extends Usuario {
+    constructor(nome, email, senha, nivel) {
+        // Chama o construtor da classe pai
+        super(nome, email, senha);
+        this.nivel = nivel;
+        this.permissoes = ['ler', 'escrever', 'excluir'];
+    }
+    
+    // Sobrescrevendo método da classe pai
+    verificarSenha(senha) {
+        console.log('Tentativa de login administrativo');
+        return super.verificarSenha(senha);
+    }
+    
+    concederPermissao(usuario, permissao) {
+        if (this.nivel > 1) {
+            usuario.permissoes = usuario.permissoes || [];
+            usuario.permissoes.push(permissao);
+            return true;
+        }
+        return false;
+    }
+}
+
+// Usando as classes
+const usuario = new Usuario('João', 'joao@email.com', '123456');
+console.log(usuario.nomeCompleto); // "João (joao@email.com)"
+
+const admin = new Admin('Maria', 'maria@email.com', 'admin123', 2);
+console.log(admin.verificarSenha('admin123')); // true
+console.log(Usuario.validarEmail('teste@email.com')); // true</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Módulos JavaScript</h3>
+                        <p>Os módulos permitem organizar código em arquivos separados e reutilizáveis.</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// arquivo: util.js
+// Exportando funções e variáveis individuais
+export const PI = 3.14159;
+
+export function calcularAreaCirculo(raio) {
+    return PI * raio * raio;
+}
+
+export function calcularPerimetroCirculo(raio) {
+    return 2 * PI * raio;
+}
+
+// Exportação padrão (default)
+export default class Calculadora {
+    somar(a, b) {
+        return a + b;
+    }
+    
+    subtrair(a, b) {
+        return a - b;
+    }
+}
+
+// arquivo: app.js
+// Importando módulos
+import Calculadora, { PI, calcularAreaCirculo as area } from './util.js';
+
+// Importando tudo
+import * as Utilitarios from './util.js';
+
+console.log(PI); // 3.14159
+console.log(area(5)); // 78.53975
+
+const calc = new Calculadora();
+console.log(calc.somar(10, 5)); // 15
+
+console.log(Utilitarios.PI); // 3.14159
+console.log(Utilitarios.calcularPerimetroCirculo(5)); // 31.4159</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Manipulação do DOM</h3>
+                        <p>O DOM (Document Object Model) permite interagir com elementos HTML através de JavaScript.</p>
+                        <div class="code-example">
+                            <pre><code class="language-javascript">// Selecionando elementos
+const titulo = document.getElementById('titulo');
+const paragrafos = document.getElementsByClassName('paragrafo');
+const botoes = document.getElementsByTagName('button');
+const container = document.querySelector('.container');
+const itens = document.querySelectorAll('ul li');
+
+// Manipulando conteúdo
+titulo.textContent = 'Novo Título'; // Altera apenas o texto
+titulo.innerHTML = 'Título com <span>HTML</span>'; // Permite adicionar HTML
+container.innerText = 'Texto simples'; // Altera o texto como usuário vê
+
+// Manipulando atributos
+const link = document.querySelector('a');
+link.setAttribute('href', 'https://www.exemplo.com');
+link.getAttribute('href'); // Retorna 'https://www.exemplo.com'
+link.removeAttribute('target');
+link.href = 'https://www.novoexemplo.com'; // Atributos comuns podem ser acessados diretamente
+
+// Manipulando classes
+const elemento = document.querySelector('.item');
+elemento.classList.add('destaque');
+elemento.classList.remove('inativo');
+elemento.classList.toggle('selecionado'); // Adiciona se não existe, remove se existe
+elemento.classList.contains('destaque'); // Verifica se contém uma classe
+
+// Manipulando estilos
+elemento.style.color = 'blue';
+elemento.style.backgroundColor = '#f0f0f0';
+elemento.style.padding = '10px';
+
+// Criando elementos
+const novoParagrafo = document.createElement('p');
+novoParagrafo.textContent = 'Novo parágrafo criado dinamicamente';
+container.appendChild(novoParagrafo);
+
+const novoItem = document.createElement('li');
+novoItem.innerHTML = 'Item <strong>novo</strong>';
+const lista = document.querySelector('ul');
+lista.insertBefore(novoItem, lista.firstChild);
+
+// Removendo elementos
+const itemAntigo = document.querySelector('.item.obsoleto');
+itemAntigo.remove();
+// ou
+itemAntigo.parentNode.removeChild(itemAntigo);
+
+// Eventos
+const botao = document.querySelector('button');
+
+botao.addEventListener('click', function(evento) {
+    console.log('Botão clicado!', evento);
+    evento.preventDefault(); // Previne o comportamento padrão
+});
+
+// Arrow function e this
+botao.addEventListener('click', (e) => {
+    console.log('Clicado', e.target);
+    this.classList.toggle('ativo'); // Cuidado: 'this' se refere ao contexto global em arrow functions
+});
+
+// Removendo eventos
+function manipuladorClique(e) {
+    console.log('Clique processado');
+    // Remove o evento após o primeiro clique
+    botao.removeEventListener('click', manipuladorClique);
+}
+botao.addEventListener('click', manipuladorClique);
+
+// Delegação de eventos
+document.querySelector('ul').addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+        console.log('Item da lista clicado:', e.target.textContent);
+    }
+});</code></pre>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>SolonTec</h2>
+                    <p>Aprendizado web simplificado</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="html.html">HTML</a></li>
+                        <li><a href="css.html">CSS</a></li>
+                        <li><a href="javascript.html">JavaScript</a></li>
+                    </ul>
+                </div>
+                <div class="footer-resources">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopeneer noreferrer">MDN Web Docs</a></li>
+                        <li><a href="https://www.w3schools.com/" target="_blank" rel="noopeneer noreferrer">W3Schools</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank" rel="noopeneer noreferrer">CSS-Tricks</a></li>
+                        <li><a href="https://javascript.info/" target="_blank" rel="noopeneer noreferrer">JavaScript.info</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Solon Thiago Dev. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+</body>
+</html>

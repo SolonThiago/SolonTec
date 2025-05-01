@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - SolonTec</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">SolonTec</a></h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="html.html" class="active">HTML</a></li>
+                    <li><a href="css.html">CSS</a></li>
+                    <li><a href="javascript.html">JavaScript</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Alternar tema claro/escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header html-header">
+        <div class="container">
+            <h1><i class="fab fa-html5"></i> HTML</h1>
+            <p>HyperText Markup Language - A estrutura da web</p>
+        </div>
+    </div>
+
+    <main class="content-page">
+        <div class="container">
+            <div class="sidebar">
+                <nav class="content-nav">
+                    <h3>Conteúdo</h3>
+                    <ul>
+                        <li><a href="#basico">Básico</a></li>
+                        <li><a href="#intermediario">Intermediário</a></li>
+                        <li><a href="#avancado">Avançado</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="main-content">
+                <section id="basico" class="level-section">
+                    <h2>HTML Básico</h2>
+                    
+                    <article class="topic">
+                        <h3>O que é HTML?</h3>
+                        <p>HTML (HyperText Markup Language) é a linguagem padrão para criar páginas web. Define a estrutura do conteúdo usando um sistema de "marcação" com elementos chamados tags.</p>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Estrutura básica de um documento HTML</h3>
+                        <p>Todo documento HTML deve começar com uma declaração de tipo de documento e conter os elementos html, head e body.</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Minha primeira página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é meu primeiro site.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Tags HTML básicas</h3>
+                        <p>As tags mais comuns usadas para formatar texto e criar estruturas básicas:</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!-- Cabeçalhos --&gt;
+&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Cabeçalho nível 3&lt;/h3&gt;
+
+&lt;!-- Parágrafos e formatação de texto --&gt;
+&lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+&lt;p&gt;Texto em &lt;strong&gt;negrito&lt;/strong&gt; e &lt;em&gt;itálico&lt;/em&gt;.&lt;/p&gt;
+
+&lt;!-- Listas --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item não ordenado 1&lt;/li&gt;
+    &lt;li&gt;Item não ordenado 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Primeiro item ordenado&lt;/li&gt;
+    &lt;li&gt;Segundo item ordenado&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Links --&gt;
+&lt;a href="https://www.exemplo.com"&gt;Visite Exemplo.com&lt;/a&gt;
+
+&lt;!-- Imagens --&gt;
+&lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="intermediario" class="level-section">
+                    <h2>HTML Intermediário</h2>
+                    
+                    <article class="topic">
+                        <h3>Formulários HTML</h3>
+                        <p>Os formulários permitem a coleta de dados dos usuários e são essenciais para criar interações em páginas web.</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;form action="/processar" method="post"&gt;
+    &lt;div&gt;
+        &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+        &lt;input type="text" id="nome" name="nome" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+        &lt;textarea id="mensagem" name="mensagem" rows="4"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" name="inscricao"&gt; 
+            Inscrever-me no newsletter
+        &lt;/label&gt;
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Tabelas HTML</h3>
+                        <p>As tabelas são usadas para organizar dados em linhas e colunas.</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Nome&lt;/th&gt;
+            &lt;th&gt;Idade&lt;/th&gt;
+            &lt;th&gt;Profissão&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ana Silva&lt;/td&gt;
+            &lt;td&gt;28&lt;/td&gt;
+            &lt;td&gt;Desenvolvedora&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Carlos Santos&lt;/td&gt;
+            &lt;td&gt;35&lt;/td&gt;
+            &lt;td&gt;Designer&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>HTML semântico</h3>
+                        <p>Os elementos semânticos fornecem significado à estrutura da página, melhorando acessibilidade e SEO.</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;header&gt;
+    &lt;h1&gt;Meu Site&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Sobre nós&lt;/h2&gt;
+        &lt;p&gt;Informações sobre a empresa.&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;article&gt;
+        &lt;h2&gt;Nosso último projeto&lt;/h2&gt;
+        &lt;p&gt;Detalhes sobre o projeto.&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Posts relacionados&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Artigo 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Artigo 2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Meu Site. Todos os direitos reservados.&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="avancado" class="level-section">
+                    <h2>HTML Avançado</h2>
+                    
+                    <article class="topic">
+                        <h3>SVG e Canvas</h3>
+                        <p>HTML5 permite a criação de gráficos vetoriais (SVG) e desenhos baseados em pixels (Canvas).</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!-- SVG (Scalable Vector Graphics) --&gt;
+&lt;svg width="200" height="200"&gt;
+    &lt;circle cx="100" cy="100" r="80" fill="blue" /&gt;
+    &lt;rect x="60" y="60" width="80" height="80" fill="red" /&gt;
+&lt;/svg&gt;
+
+&lt;!-- Canvas (para gráficos dinâmicos) --&gt;
+&lt;canvas id="meuCanvas" width="200" height="200"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    const canvas = document.getElementById('meuCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Desenhar um retângulo
+    ctx.fillStyle = 'green';
+    ctx.fillRect(50, 50, 100, 100);
+    
+    // Desenhar um círculo
+    ctx.beginPath();
+    ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = 'purple';
+    ctx.fill();
+&lt;/script&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Elementos de mídia HTML5</h3>
+                        <p>HTML5 introduziu elementos nativos para áudio e vídeo, eliminando a necessidade de plugins.</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!-- Vídeo --&gt;
+&lt;video controls width="400"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Seu navegador não suporta o elemento de vídeo.
+&lt;/video&gt;
+
+&lt;!-- Áudio --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Seu navegador não suporta o elemento de áudio.
+&lt;/audio&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Web Components</h3>
+                        <p>Web Components permitem criar elementos HTML personalizados reutilizáveis.</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!-- Definição de um web component --&gt;
+&lt;template id="meu-botao-template"&gt;
+    &lt;style&gt;
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    &lt;/style&gt;
+    &lt;button&gt;&lt;slot&gt;Clique aqui&lt;/slot&gt;&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    class MeuBotao extends HTMLElement {
+        constructor() {
+            super();
+            const shadow = this.attachShadow({mode: 'open'});
+            const template = document.getElementById('meu-botao-template');
+            shadow.appendChild(template.content.cloneNode(true));
+        }
+    }
+    
+    customElements.define('meu-botao', MeuBotao);
+&lt;/script&gt;
+
+&lt;!-- Uso do web component --&gt;
+&lt;meu-botao&gt;Enviar&lt;/meu-botao&gt;
+&lt;meu-botao&gt;Cancelar&lt;/meu-botao&gt;</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="topic">
+                        <h3>Acessibilidade (ARIA)</h3>
+                        <p>ARIA (Accessible Rich Internet Applications) melhora a acessibilidade de aplicações web para pessoas com deficiências.</p>
+                        <div class="code-example">
+                            <pre><code class="language-html">&lt;!-- Exemplo de uso de ARIA --&gt;
+&lt;div role="navigation" aria-label="Menu principal"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Produtos&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;button aria-expanded="false" aria-controls="conteudo-expansivel"&gt;
+    Mais informações
+&lt;/button&gt;
+&lt;div id="conteudo-expansivel" aria-hidden="true"&gt;
+    Conteúdo adicional que pode ser expandido.
+&lt;/div&gt;
+
+&lt;div role="alert" aria-live="assertive"&gt;
+    Este alerta será anunciado para usuários de leitores de tela.
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>SolonTec</h2>
+                    <p>Aprendizado web simplificado</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="html.html">HTML</a></li>
+                        <li><a href="css.html">CSS</a></li>
+                        <li><a href="javascript.html">JavaScript</a></li>
+                    </ul>
+                </div>
+                <div class="footer-resources">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopeneer noreferrer">MDN Web Docs</a></li>
+                        <li><a href="https://www.w3schools.com/" target="_blank" rel="noopeneer noreferrer">W3Schools</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank" rel="noopeneer noreferrer">CSS-Tricks</a></li>
+                        <li><a href="https://javascript.info/" target="_blank" rel="noopeneer noreferrer">JavaScript.info</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Solon Thiago Dev. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</body>
+</html>
